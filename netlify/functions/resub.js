@@ -1,4 +1,3 @@
-const { schedule } = require("@netlify/functions");
 const { fetch, FormData } = require("@remix-run/web-fetch");
 
 const CALLBACK_URL =

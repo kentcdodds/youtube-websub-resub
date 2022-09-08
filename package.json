@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@netlify/functions": "^1.2.0",
     "@remix-run/web-fetch": "^4.2.0"
   }
 }
