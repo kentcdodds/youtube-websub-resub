@@ -1,4 +1,4 @@
 [functions."resub"]
 # https://crontab.guru/#32_8_*/3_*_*
 # "At 08:32 on every 3rd day-of-month."
-schedule = "32 8 */3 * *"
+schedule = "32 15 */3 * *"

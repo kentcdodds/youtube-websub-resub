@@ -1,4 +1,4 @@
-const { fetch, FormData } = require("@remix-run/web-fetch");
+const { fetch, Request, FormData } = require("@remix-run/web-fetch");
 
 const CALLBACK_URL =
   "https://kcd-discord-bot-v2.fly.dev/resources/youtube-push-callback";
@@ -18,13 +18,21 @@ async function handler() {
   // formData.set('hub.verify_token', '')
   // formData.set('hub.secret', '')
   // formData.set('hub.lease_seconds', '')
-  const response = await fetch("https://pubsubhubbub.appspot.com/subscribe", {
+  const request = new Request("https://pubsubhubbub.appspot.com/subscribe", {
     method: "POST",
     body: formData,
   });
+  console.log(
+    `\n\nsending request\n`,
+    request.url,
+    "\n",
+    Object.fromEntries(formData.entries())
+  );
+  const response = await fetch(request);
+  console.log(`\n\nreceived response\n`, response.status, response.statusText);
 
   return {
-    statusCode: 200,
+    statusCode: response.status,
   };
 }
 
