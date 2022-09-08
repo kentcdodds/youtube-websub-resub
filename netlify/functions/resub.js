@@ -1,3 +1,6 @@
+// Check on the current status of the subscription here:
+// https://pubsubhubbub.appspot.com/subscription-details?hub.callback=https%3A%2F%2Fkcd-discord-bot-v2.fly.dev%2Fresources%2Fyoutube-push-callback&hub.topic=https%3A%2F%2Fwww.youtube.com%2Fxml%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCz-BYvuntVRt_VpfR6FKXJw&hub.secret=
+
 const { fetch, Request, FormData } = require("@remix-run/web-fetch");
 
 const CALLBACK_URL =
